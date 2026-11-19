@@ -22,8 +22,8 @@ def validate(values):
         errors.append("DB_PASSWORD must be nonempty")
 
     for key in values:
-    if not key.isupper():
-        errors.append(f"{key} must be uppercase (did you mean {key.upper()}?)")
+        if not key.isupper():
+            errors.append(f"{key} must be uppercase (did you mean {key.upper()}?)")
 
     # Return useful errors naming keys, not secret values.
     return errors
